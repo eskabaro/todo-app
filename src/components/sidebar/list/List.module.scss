@@ -1,0 +1,76 @@
+.wrapper {
+     background-color: #1f1f23;
+     height: 90%;
+     overflow-y: scroll;
+
+     &::-webkit-scrollbar {
+          width: 0;
+     }
+
+     &__item {
+          cursor: pointer;
+          height: 40px;
+          margin-top: 5px;
+          display: flex;
+          align-items: center;
+          position: relative;
+          border-radius: 5px;
+          background: #26262c;
+          margin-left: 5px;
+          margin-right: 5px;
+
+          &.active {
+               background-color: #313139;
+          }
+
+          &:hover {
+               background-color: #313139;
+
+               >button {
+                    display: block;
+               }
+          }
+
+          >svg {
+               min-width: 20px;
+               max-width: 20px;
+               fill: white;
+               margin-left: 10px;
+          }
+
+          >a {
+               height: 100%;
+               display: flex;
+               align-items: center;
+               width: 100%;
+               margin-left: 10px;
+               text-decoration: none;
+
+               >span {
+                    color: #fff;
+                    font-size: 15px;
+                    letter-spacing: 1px;
+               }
+          }
+
+          >button {
+               cursor: pointer;
+               margin-right: 10px;
+               height: 20px;
+               border: none;
+               background: none;
+               display: none;
+
+               &:hover {
+                    >svg {
+                         fill: #c4c4c4;
+                    }
+               }
+
+               >svg {
+                    fill: #fff;
+                    height: 20px;
+               }
+          }
+     }
+}
