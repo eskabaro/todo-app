@@ -8,7 +8,7 @@ export const Input: React.FC = () => {
      const [value, setValue] = useState('')
      const dispatch = useAppDispatch()
 
-     function addList() {
+     function addList(e: any) {
           if (value) {
                dispatch(addNewList({
                     id: Date.now().toString(),
@@ -17,12 +17,14 @@ export const Input: React.FC = () => {
                }))
           }
           setValue('')
+          
+          e.preventDefault()
      }
 
-     return <label className={s.label}>
+     return <form className={s.label}>
           <input type="text" value={value} onChange={e => setValue(e.target.value)} placeholder="Add new list" />
-          <button onClick={addList}>
+          <button onClick={addList} type="submit">
                <Plus />
           </button>
-     </label>
+     </form>
 }

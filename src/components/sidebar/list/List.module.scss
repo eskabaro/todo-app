@@ -47,9 +47,13 @@
                text-decoration: none;
 
                >span {
+                    max-width: 150px;
                     color: #fff;
                     font-size: 15px;
                     letter-spacing: 1px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                }
           }
 

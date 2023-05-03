@@ -12,7 +12,7 @@ export const Input: React.FC<IProps> = ({ id }) => {
      const [value, setValue] = useState('')
      const dispatch = useAppDispatch()
 
-     function addTodo() {
+     function addTodo(e: any) {
           if (value) {
                dispatch(addNewTodo({
                     idList: id ? id : '',
@@ -22,12 +22,13 @@ export const Input: React.FC<IProps> = ({ id }) => {
                }))
           }
           setValue('')
+          e.preventDefault()
      }
 
-     return <label className={s.label}>
+     return <form className={s.label}>
           <input type="text" value={value} onChange={e => setValue(e.target.value)} placeholder="Add new todo"/>
-          <button onClick={addTodo}>
+          <button onClick={addTodo} type="submit">
                <Plus />
           </button>
-     </label>
+     </form>
 }

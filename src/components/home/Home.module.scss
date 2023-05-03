@@ -30,8 +30,11 @@
 
      &__p2 {
           position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
           bottom: 20px;
           font-size: 11px;
+          padding: 0 !important;
           @include text;
      }
 }
